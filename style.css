@@ -1,0 +1,104 @@
+/* fonts */
+.ftext {
+    font-size: 12pt;
+    font-weight: bold;
+    font-family: "Arial";
+}
+
+.ftitle {
+    font-family: "Helvetica";
+    font-size: 24pt;
+    font-weight: bold;
+}
+
+.hide {
+    display: none;
+}
+
+.round-sides {
+    height: 50px;
+    border: 1px solid black;
+    border-radius: 25px;
+    padding-left: 25px;
+    padding-right: 25px;
+}
+
+label {
+    margin: 0.5em;
+    text-align: right;
+    align-self: center;
+    flex-basis: 100px;
+    flex-grow: 1;
+}
+
+body {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+}
+
+button {
+    display: block;
+    width: 150px;
+    background-color: black;
+    color: white;
+    transition:
+        background-color 0.2s,
+        box-shadow 0.2s;
+}
+
+button:hover {
+    /* offset-x offset-y blur scale color  */
+    box-shadow: 0px 0px 50px 5px green;
+}
+
+button:active {
+    background-color: dimgray;
+    border-color: dimgray;
+}
+
+h1 {
+    text-align: center;
+}
+
+input {
+    margin: 1em;
+    outline: none;
+    flex-grow: 1;
+    flex-basis: 100px;
+    text-align: center;
+    transition:
+        background-color 0.2s,
+        box-shadow 0.2s;
+}
+
+img {
+    aspect-ratio: auto;
+    width: 500px;
+    align-self: center;
+}
+
+input:focus {
+    box-shadow: 0px 0px 20px 2px green;
+}
+
+#title-cont {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: auto;
+    width: 66%;
+}
+
+#calc-notes {
+    display: none;
+    flex-direction: column;
+    width: 66%;
+    align-self: center;
+}
+
+#calc-notes > div {
+    display: flex;
+    flex-direction: row;
+}

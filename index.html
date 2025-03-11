@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Calculadora Notes</title>
+        <link rel="stylesheet" type="text/css" href="style.css" />
+    </head>
+    <body>
+        <script>
+            function hideTitle() {
+                const buttn = document.querySelector("#comencar-btt");
+                const calcn = document.querySelector("#calc-notes");
+                buttn.parentElement.style.display = "none";
+                calcn.style.display = "flex";
+            }
+
+            function calculaNota() {
+                const notaq = document.querySelector("#notaq");
+                const percq = document.querySelector("#percq");
+                const notaex = document.querySelector("#notaex");
+                const percex = document.querySelector("#percex");
+                const result = document.querySelector("#result");
+                if (Number(percq.value) + Number(percex.value) > 100) {
+                    window.alert("Els percentatges no són correctes!");
+                }
+                result.value =
+                    notaq.value * (percq.value / 100.0) +
+                    notaex.value * (percex.value / 100.0);
+                if (Number(result.value) > 5) {
+                    document
+                        .querySelector("#happyimg")
+                        .classList.remove("hide");
+                } else {
+                    document.querySelector("#happyimg").classList.add("hide");
+                }
+            }
+        </script>
+
+        <div id="title-cont" class="hide">
+            <h1 class="ftitle">Calculadora de Notes</h1>
+            <button
+                type="button"
+                onclick="hideTitle()"
+                class="ftext round-sides"
+                id="comencar-btt"
+            >
+                Començar
+            </button>
+        </div>
+        <div id="calc-notes">
+            <h1 class="ftitle">Calculadora de Notes</h1>
+            <div>
+                <label for="notaq" class="ftext">Nota Quadern</label>
+                <input
+                    type="text"
+                    name="notaq"
+                    id="notaq"
+                    class="round-sides ftext"
+                    onchange="calculaNota()"
+                />
+                <label for="percq" class="ftext">% Quadern</label>
+                <input
+                    type="text"
+                    class="round-sides ftext"
+                    name="percq"
+                    id="percq"
+                    onchange="calculaNota()"
+                />
+            </div>
+            <div>
+                <label for="notaex" class="ftext">Nota Examen</label>
+                <input
+                    type="text"
+                    class="round-sides ftext"
+                    name="notaex"
+                    id="notaex"
+                    onchange="calculaNota()"
+                />
+                <label for="percex" class="ftext">% Examen</label>
+                <input
+                    type="text"
+                    class="round-sides ftext"
+                    name="percex"
+                    id="percex"
+                    onchange="calculaNota()"
+                />
+            </div>
+            <div>
+                <label for="result" class="ftext">Nota final</label>
+                <input
+                    type="text"
+                    readonly="readonly"
+                    class="round-sides ftext"
+                    name="result"
+                    id="result"
+                />
+            </div>
+            <img
+                class="hide"
+                id="happyimg"
+                src="https://media.giphy.com/media/gIZ8sOkVe8E7HPxSZ5/giphy.gif?cid=790b7611op7cdix8gxti4a5xa13lvfje5dubo901uajfbvcy&ep=v1_gifs_search&rid=giphy.gif&ct=g"
+                alt="Gif of happy student"
+            />
+        </div>
+    </body>
+</html>
